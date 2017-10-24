@@ -1,7 +1,20 @@
-// $(document).ready(function() {
-//   $("form#form1").submit(function(event){
-//   event.preventDefault();
-// });
+$(document).ready(function() {
+  $("form#form1").submit(function(event){
+  event.preventDefault();
+    var vowels = ["a", "e", "i", "o", "u"];
+    var sentence1 = $("input#item1").val();
+    var seperates = sentence1.split("");
+    for (var index = 0; index < seperates.length; index++){
+      for (var vowelIndex =0; vowelIndex < vowels.length; vowelIndex++) {
+        if (seperates[index] === vowels[vowelIndex]){
+          seperates[index] = "-";
+        }
+      }
+    }
+    var answer = seperates.join("");
+    $(".answer").append("<p>" + answer + "</p>")
+});
+});
 //   var vowels = ["a", "e", "i", "o", "u"]
 //   var sentence = $("p#sentence").val();
 //   alert(sentence);
@@ -39,15 +52,10 @@
 // if ("" === vowels){
 //
 // }
-var answer = []
-var vowels = ["a", "e", "i", "o", "u"];
-var sentence1 = "Testing"
-var seperates = [sentence1.split("")];
-for (var index = 0; index< seperates.length; index+= 1){
-  if(index === vowel){
-    $()return answer += "-")
-  } else {
-    $(return answer += index);
-  } alert(answer);
 
-};
+
+  // if(index === vowel){
+  //   $()return answer += "-")
+  // } else {
+  //   $(return answer += index);
+  // } alert(answer);
